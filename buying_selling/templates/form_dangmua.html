@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static 'css/buy_sell.css' %}" />
+  {% block stylesheet %}{% endblock stylesheet %}
+</head>
+<body>
+  <main>
+	<h1 style="color: blue">FORM ĐĂNG KÝ MUA</h1>
+	<form method="post" enctype="multipart/form-data" class="form-group" style="font-weight: bold">
+	  {% csrf_token %}
+	  {{ form.as_p }}
+	  <button type="submit" class="btn btn-primary">ĐĂNG KÝ</button>
+	</form>
+  </main>
+</body>
+</html>
+{% endblock %}
